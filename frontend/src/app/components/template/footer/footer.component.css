@@ -1,0 +1,17 @@
+.footer {
+    position: fixed;
+    bottom: 0;  
+    justify-content: flex-end;
+}
+
+.footer span {
+    font-size: 1rem;    
+}
+
+.footer .title-group a {
+    vertical-align: middle;
+}
+
+.footer .material-icons {
+    vertical-align: middle;
+}
