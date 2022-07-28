@@ -1,19 +1,29 @@
 {
-    "books": [
-        {
-            "id": 1,
-            "name": "A Menina do Piano Alemão",
-            "price": 10.00
-        },
-        {
-            "id": 2,
-            "name": "The Dragon Gate",
-            "price": 13.99
-        },
-        {
-            "id": 3,
-            "name": "China: The Flense",
-            "price": 14.99
-        }
-    ]
+  "books": [
+    {
+      "id": 1,
+      "name": "A Menina do Piano Alemão",
+      "price": 10
+    },
+    {
+      "id": 2,
+      "name": "The Dragon Gate",
+      "price": 13.99
+    },
+    {
+      "id": 3,
+      "name": "China: The Flense",
+      "price": 14.99
+    },
+    {
+      "name": "",
+      "price": 0,
+      "id": 4
+    },
+    {
+      "name": "",
+      "price": 0,
+      "id": 5
+    }
+  ]
 }
