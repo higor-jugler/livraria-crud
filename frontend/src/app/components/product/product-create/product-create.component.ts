@@ -1,4 +1,6 @@
+import { ProductService } from './../product.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router'
 
 
 @Component({
@@ -8,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductCreateComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: ProductService, private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  save(): void {
+    this.service.showMenssage('Salvo!')
+  } 
+
+  cancel(): void {
+    this.router.navigate(['/products'])
   }
 
 }
