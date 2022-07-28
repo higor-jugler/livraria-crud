@@ -29,6 +29,11 @@
       "name": "Java",
       "price": "129,90",
       "id": 6
+    },
+    {
+      "name": "A menina que rouba livros",
+      "price": "12.80",
+      "id": 7
     }
   ]
 }
