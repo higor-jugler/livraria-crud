@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
-import { Prodruct } from './product.model';
+import { Product } from './product.model';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +21,11 @@ export class ProductService {
     })
   }
   
-  createNewBook(books: Prodruct): Observable<Prodruct> {
-    return this.http.post<Prodruct>(this.baseUrl, books)
+  createNewBook(books: Product): Observable<Product> {
+    return this.http.post<Product>(this.baseUrl, books)
+  }
+
+  readListBook(): Observable<Product[]> {
+    return this.http.get<Product[]>(this.baseUrl)
   }
 }
