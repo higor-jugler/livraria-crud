@@ -1,5 +1,6 @@
 import { Product } from './../product.model';
 import { Component, OnInit } from '@angular/core';
+import { ProductService } from '../product.service';
 
 @Component({
   selector: 'app-product-read',
@@ -10,9 +11,13 @@ export class ProductReadComponent implements OnInit {
 
   product: Product[] = []
 
-  constructor() { }
+  constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
+    this.productService.readListBook().subscribe(product => {
+      this.product = product
+      console.log(product)
+    })
   }
 
 }
