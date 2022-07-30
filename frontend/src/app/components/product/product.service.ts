@@ -28,4 +28,9 @@ export class ProductService {
   readListBook(): Observable<Product[]> {
     return this.http.get<Product[]>(this.baseUrl)
   }
+
+  // readListId(): Observable<Product> {
+  //   const url = `${this.baseUrl}/${}`
+  //   return this.http.get<Product>(url)
+  // }
 }
