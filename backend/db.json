@@ -34,6 +34,16 @@
       "name": "A menina que rouba livros",
       "price": "12.80",
       "id": 7
+    },
+    {
+      "name": "",
+      "price": "100",
+      "id": 8
+    },
+    {
+      "name": "",
+      "price": "100",
+      "id": 9
     }
   ]
 }
