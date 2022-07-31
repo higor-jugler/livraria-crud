@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Observable } from 'rxjs';
+import { catchError, map, Observable } from 'rxjs';
 import { Product } from './product.model';
 
 @Injectable({
@@ -30,12 +30,17 @@ export class ProductService {
   }
 
   readListId(id: string): Observable<Product> {
-    let url = `${this.baseUrl}/${id}`
+    const url = `${this.baseUrl}/${id}`
     return this.http.get<Product>(url)
   }
 
   updateListId(product: Product): Observable<Product> {
-    const url = `${this.baseUrl}/${product.id}`
-    return this.http.put<Product>(url, product)
+    const url = `${this.baseUrl}/${product.id}`    
+    return this.http.put<Product>(url, product).pipe(
+      map((obj) => obj)
+    )
   }
+  
+  
+  
 }
