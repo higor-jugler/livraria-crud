@@ -21,26 +21,33 @@ export class ProductService {
     })
   }
   
+  //Create
   createNewBook(books: Product): Observable<Product> {
     return this.http.post<Product>(this.baseUrl, books)
   }
 
+  //Read
   readListBook(): Observable<Product[]> {
     return this.http.get<Product[]>(this.baseUrl)
   }
 
-  readListId(id: string): Observable<Product> {
+  //ReadById
+  readListId(id: any): Observable<Product> {
     const url = `${this.baseUrl}/${id}`
     return this.http.get<Product>(url)
   }
 
+  //Update
   updateListId(product: Product): Observable<Product> {
     const url = `${this.baseUrl}/${product.id}`    
-    return this.http.put<Product>(url, product).pipe(
-      map((obj) => obj)
-    )
+    return this.http.put<Product>(url, product)
   }
-  
-  
+    
+  deleteListId(id: number): Observable<Product> {
+    const url = `${this.baseUrl}/${id}`;
+    return this.http.delete<Product>(url).pipe(
+      map((obj) => obj)      
+    )
+  }  
   
 }

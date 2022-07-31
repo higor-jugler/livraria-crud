@@ -1,4 +1,7 @@
+import { Product } from './../product.model';
 import { Component, OnInit } from '@angular/core';
+import { ProductService } from '../product.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-delete',
@@ -7,9 +10,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductDeleteComponent implements OnInit {
 
-  constructor() { }
+  product: Product = {
+    name: '',
+    price: 0
+  }
+
+  constructor(
+    private productService: ProductService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
   }
 
+  // deletar(): void {
+  //   this.colecaoService.exlcuirId(`${this.colecoes.id}`).subscribe(() => {
+  //     this.colecaoService.mensagemSalvado('Pronto')
+  //     this.router.navigate(['/colecoes'])
+  //   }) 
+  // }
+
+  cancel(): void {
+    this.router.navigate(["/products"])
+  }
 }
