@@ -12,7 +12,7 @@ export class ProductDeleteComponent implements OnInit {
 
   product: Product = {
     name: '',
-    price: 0
+    price: Number(null)
   }
 
   constructor(
@@ -22,14 +22,18 @@ export class ProductDeleteComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    const id = this.route.snapshot.paramMap.get('id')
+    this.productService.readListId(id).subscribe(product => {
+      this.product = product
+    })
   }
 
-  // deletar(): void {
-  //   this.colecaoService.exlcuirId(`${this.colecoes.id}`).subscribe(() => {
-  //     this.colecaoService.mensagemSalvado('Pronto')
-  //     this.router.navigate(['/colecoes'])
-  //   }) 
-  // }
+  deleteBook(): void {
+    this.productService.deleteListId(this.product.id).subscribe(() => {
+      this.productService.showMenssage("Excluido!")
+      this.router.navigate(["/products"])
+    })
+  }
 
   cancel(): void {
     this.router.navigate(["/products"])
